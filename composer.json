@@ -1,5 +1,5 @@
 {
-    "name": "comensee/parsleys-server-bundle",
+    "name": "mySportConnect/parsleys-server-bundle",
     "description": "Allow to get Symfony 2 form server-side validation on a field type",
     "authors": [
         {
