@@ -1,0 +1,19 @@
+{
+    "name": "comensee/parsleys-server-bundle",
+    "description": "Allow to get Symfony 2 form server-side validation on a field type",
+    "authors": [
+        {
+            "name": "Alain Bangoula",
+            "email": "alain.bangoula@come-n-see.fr"
+        }
+    ],
+    "require": {
+
+    },
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-0": { "Parsley\\ServerBundle": "" }
+    }
+    
+}
+

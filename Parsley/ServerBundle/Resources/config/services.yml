@@ -1,0 +1,9 @@
+parameters:
+    parsley_server_form.class: Parsley\ServerBundle\Form\FormType
+
+services:
+    form.type.form:
+        class: %parsley_server_form.class%
+        arguments: [@service_container]
+        tags:
+            - { name: form.type, alias: form}

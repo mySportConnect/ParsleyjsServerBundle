@@ -1,0 +1,4 @@
+parsley_validation:
+    pattern: /{form_service_name}/{field_to_compare}
+    defaults: { _controller: ParsleyServerBundle:Validation:validation }
+
