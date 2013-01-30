@@ -5,6 +5,10 @@
         {
             "name": "Alain Bangoula",
             "email": "alain.bangoula@mysportconnect.net"
+        },
+        {
+            "name": "Rémi Barbe",
+            "email": "remi.barbe@mysportconnect.net"
         }
     ],
     "type": "symfony-bundle",
