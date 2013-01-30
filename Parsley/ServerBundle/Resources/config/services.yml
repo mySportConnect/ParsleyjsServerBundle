@@ -1,5 +1,6 @@
 parameters:
     parsley_server_form.class: Parsley\ServerBundle\Form\FormType
+    parsley_server_form_generator.class: Parsley\ServerBundle\Form\Generator
 
 services:
     form.type.form:
@@ -7,3 +8,6 @@ services:
         arguments: [@service_container]
         tags:
             - { name: form.type, alias: form}
+    parsley_server_form_generator:
+        class: %parsley_server_form_generator.class%
+        arguments: [@service_container]
