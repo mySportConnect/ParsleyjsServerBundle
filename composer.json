@@ -4,16 +4,17 @@
     "authors": [
         {
             "name": "Alain Bangoula",
-            "email": "alain.bangoula@come-n-see.fr"
+            "email": "alain.bangoula@mysportconnect.net"
         }
     ],
-    "require": {
-
-    },
     "type": "symfony-bundle",
     "autoload": {
         "psr-0": { "Parsley\\ServerBundle": "" }
     }
-    
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/form": ">=2.1,<2.3-dev",
+    }, 
 }
 
