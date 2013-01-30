@@ -1,4 +1,4 @@
-ParleysServerBundle
+ParlseyJsServerBundle
 ===================
 
 The ParsleyJsServerBundle allows to get Symfony 2 form server-side validation on a field type via form validations.
