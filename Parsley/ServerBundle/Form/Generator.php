@@ -2,6 +2,9 @@
 
 namespace Parsley\ServerBundle\Form;
 
+class UndefinedValidationException extends \Exception
+{
+}
 
 class Generator 
 {
@@ -19,8 +22,17 @@ class Generator
         $tmp_form = $this->get('form.factory')->create($form_type);
 
         $config = $this->get('service_container')->getParameter('parsley_server');
+        
+        try {
 
-        $form = $this->get('form.factory')->createNamed($tmp_form->getName(), $form_type, null, array('validation_groups' =>  $config['validations'][$form_service_name]));
+            $form = $this->get('form.factory')->createNamed($tmp_form->getName(), $form_type, null, array('validation_groups' =>  $config['validations'][$form_service_name]));
+        
+        } catch (\Exception $e)
+        
+        {
+            throw new UndefinedValidationException("Please define a form validation for this form.");
+        }
+        
 
         $form->bind($this->get('request'));
 
