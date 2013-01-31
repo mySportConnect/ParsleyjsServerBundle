@@ -11,6 +11,7 @@
             "email": "remi.barbe@mysportconnect.net"
         }
     ],
+    "license": "MIT",
     "type": "symfony-bundle",
     "autoload": {
         "psr-0": { "Parsley\\ServerBundle": "" }
