@@ -21,7 +21,6 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('parsley_server')->children()
                         ->arrayNode('validations')->isRequired()
                             ->children()
-                            ->prototype('scalar')
                                 ->arrayNode()
                                     ->children()
                                         ->ArrayNode('group')->end()
