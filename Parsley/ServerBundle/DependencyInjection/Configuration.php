@@ -20,7 +20,13 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('parsley_server')->children()
                         ->arrayNode('validations')->isRequired()
-                            ->prototype('variable')->end()
+                            ->children()
+                            ->prototype('scalar')
+                                ->arrayNode()
+                                    ->children()
+                                        ->ArrayNode('group')->end()
+                                        ->scalarNode('translation_domain')->defaultValue('messages')
+                            ->end()
         ;
 
         // Here you should define the parameters that are allowed to

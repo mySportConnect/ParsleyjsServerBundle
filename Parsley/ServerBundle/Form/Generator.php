@@ -40,7 +40,7 @@ class Generator
         $errors = array();
 
         foreach($field->getErrors() as $idx => $error){
-                $errors[] =  $this->get('translator')->trans($error->getMessage(), array(), 'validators',  $this->get('request')->getLocale());
+                $errors[] =  $this->get('translator')->trans($error->getMessage(), array(), $config['validations'][$form_service_name]['translation_domain'],  $this->get('request')->getLocale());
         }
 
         return array($field, $errors);
