@@ -21,8 +21,8 @@ class ValidationController extends Controller
             foreach($errors as $error){
                 $message .= $error;
             }
-            $response = new Response($message);
-            $response->setStatusCode(500);
+            $response = new Response(json_encode ( array('error' => $message) ) );
+            $response->headers->set('Content-Type', 'application/json');
             return $response;
         }
     }
