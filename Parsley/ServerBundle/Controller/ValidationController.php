@@ -3,7 +3,7 @@
 namespace Parsley\ServerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller ;
-use Symfony\Component\HttpFoundation\Response ;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Form\FormRegistryInterface ;
 
 class ValidationController extends Controller
@@ -21,8 +21,10 @@ class ValidationController extends Controller
             foreach($errors as $error){
                 $message .= $error;
             }
-            $response = new Response(json_encode ( array('error' => $message) ) );
-            $response->headers->set('Content-Type', 'application/json');
+            $response = new JsonResponse();
+            $response->setData(array(
+                'error' => $message
+            ));
             return $response;
         }
     }
