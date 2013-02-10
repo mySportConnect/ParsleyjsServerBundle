@@ -3,7 +3,7 @@
 namespace Parsley\ServerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller ;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\FormRegistryInterface ;
 
 class ValidationController extends Controller
