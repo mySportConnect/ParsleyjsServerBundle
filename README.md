@@ -56,6 +56,10 @@ Finally enable Parsley validation on the field you want to like this:
     }
 ```
 
+## News
+
+IRC on irc.freenode.net #mysportconnect
+
 ## License
 
 mydotfiles is licensed under the MIT license (see LICENSE.md file).
