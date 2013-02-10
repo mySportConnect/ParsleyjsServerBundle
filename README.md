@@ -1,23 +1,19 @@
-ParlseyJsServerBundle
-===================
+# ParlseyjsServerBundle
 
-A symfony 2 bundle integration of wonderful client-side javascript library [Parsley.js](https://github.com/guillaumepotier/Parsley.js)   by @guillaumepotier.
+A symfony 2 bundle integration of wonderful client-side javascript library [Parsley.js](https://github.com/guillaumepotier/Parsley.js) by @guillaumepotier.
 
+The ParsleyjsServerBundle allows to get Symfony 2 form server-side validation on a field type via form validations.
 
+It uses the data-remote attribute of client-side Parsley.js library. For more informations see [here](http://parsleyjs.org/documentation.html#basic-constraints).
 
-The ParsleyJsServerBundle allows to get Symfony 2 form server-side validation on a field type via form validations.
-
-It uses the data-remote attribute of client-side Parsley.js library.
-
-
-Add ParsleyJsServerBundle to your project : 
+Add ParsleyJsServerBundle to your project:
 
 ```bash
-php composer.phar require mysportconnect/parsley-server-bundle
-php composer.phar update
+$ php composer.phar require mysportconnect/parsley-server-bundle
+$ php composer.phar update
 ```
 
-Add the bundle to your AppKernel.php file : 
+Add the bundle to your AppKernel.php file:
 
 ```php
 class AppKernel extends Kernel
@@ -25,13 +21,13 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
-            //your bundles
+            // Your bundles
             new Parsley\ServerBundle\ParsleyServerBundle()
         );
 
 ```
 
-Add configuration to your config.yml file. As ParsleyJsServerBundle depends on your form validations, not your entities, you must provide information on each form there is a field you want to "remote-validate". You doing this by providing validation_groups for your forms  : 
+Add configuration to your config.yml file. As ParsleyJsServerBundle depends on your form validations, not your entities, you must provide information on each form there is a field you want to "remote-validate". You doing this by providing validation_groups for your forms:
 
 ```yaml
 parsley_server:
@@ -40,7 +36,7 @@ parsley_server:
         fos_user_profile: [Profile]
 ```
 
-Then add routing information to your routing.yml file : 
+Then add routing information to your routing.yml file:
 
 ```yaml
 parsley:
@@ -48,16 +44,27 @@ parsley:
     prefix: /parsley
 ```
 
-Finally enable Parsley validation on the field you want to like this : 
+Finally enable Parsley validation on the field you want to like this:
 
 ```php
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm ( FormBuilderInterface $builder , array $options )
     {
         $builder
-            ->add('username', null, array(
+            -> add ( 'username' , null , array (
                                         "parsley" => true
-            ))
+            ) )
     }
 ```
 
+## License
+
+mydotfiles is licensed under the MIT license (see LICENSE.md file).
+
+## Author
+
+mySportConnect, Alain Bangoula (aka comensee), Rémi Barbe (aka Remiii) and contributors.
+
+## Bug report and Help
+
+For bug reports open a Github ticket. Patches gratefully accepted. :-)
 
