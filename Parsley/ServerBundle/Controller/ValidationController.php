@@ -19,7 +19,6 @@ class ValidationController extends Controller
             $response -> setData ( array (
                 'success' => ''
             ) ) ;
-
         }
         catch (\Exception $e)
         {

@@ -34,11 +34,15 @@ class Generator
 
         $form -> bind ( $this -> container -> get ( 'request' ) ) ;
         $field = $form -> get ( $field_to_compare ) ;
-        $errors = array ( ) ;
 
+        $errorsList = '' ;
         foreach ( $field -> getErrors ( ) as $idx => $error )
         {
-                throw new \Exception ( $this -> container -> get ( 'translator' ) -> trans ( $error -> getMessage ( ) , array ( ) , $config [ 'validations' ] [ $form_service_name ] [ 'translation_domain' ] , $this -> container -> get ( 'request' ) -> getLocale ( ) ) ) ;
+            $errorsList .= $this -> container -> get ( 'translator' ) -> trans ( $error -> getMessage ( ) , array ( ) , $config [ 'validations' ] [ $form_service_name ] [ 'translation_domain' ] , $this -> container -> get ( 'request' ) -> getLocale ( ) ) ;
+        }
+        if ( $errorsList != '' )
+        {
+            throw new \Exception ( $errorsList ) ;
         }
 
     }
