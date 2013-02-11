@@ -62,7 +62,7 @@ IRC on irc.freenode.net #mysportconnect
 
 ## License
 
-mydotfiles is licensed under the MIT license (see LICENSE.md file).
+ParsleyjsServerBundle is licensed under the MIT license (see LICENSE.md file).
 
 ## Author
 
