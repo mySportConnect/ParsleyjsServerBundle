@@ -32,8 +32,8 @@ Add configuration to your config.yml file. As ParsleyJsServerBundle depends on y
 ```yaml
 parsley_server:
     validations:
-        fos_user_registration: [Registration]
-        fos_user_profile: [Profile]
+        fos_user_registration: { group: [Registration], translation_domain: validators}
+        fos_user_profile: { group: [Profile], translation_domain: validators}
 ```
 
 Then add routing information to your routing.yml file:
