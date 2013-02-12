@@ -10,6 +10,12 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class FormTypeExtension extends AbstractTypeExtension
 {
+    private $container;
+
+    public function __construct($container)
+    {
+        $this->container = $container;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->setAttribute('parsley', $options['parsley']);
@@ -21,7 +27,7 @@ class FormTypeExtension extends AbstractTypeExtension
             $view->vars = array_replace($view->vars, array(
                 'attr'              => array(
                     "data-remote" => $this->container->get("router")->generate('parsley_validation',
-                        array("form_service_name"=>$parentFullName, "field_to_compare"=>$name))
+                        array("form_service_name"=>$form->getParent()->getName(), "field_to_compare"=>$form->getName()))
                 )
             ));
         }
