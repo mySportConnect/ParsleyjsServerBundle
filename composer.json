@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.2",
-        "symfony/form": ">=2.1,<2.3-dev"
+        "symfony/form": "~2.1"
     }
 }
 
