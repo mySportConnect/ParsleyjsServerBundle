@@ -29,7 +29,7 @@ class Generator
         }
         catch ( \Exception $e )
         {
-            throw new UndefinedValidationException ( 'Please define a form validation for this form.' ) ;
+            throw new UndefinedValidationException ( 'Please define a form validation for this form.' , 500 ) ;
         }
 
         $form -> bind ( $this -> container -> get ( 'request' ) ) ;
@@ -42,7 +42,7 @@ class Generator
         }
         if ( $errorsList != '' )
         {
-            throw new \Exception ( $errorsList ) ;
+            throw new \Exception ( $errorsList , 400 ) ;
         }
 
     }
