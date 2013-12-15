@@ -26,7 +26,7 @@ class ValidationController extends Controller
                 'error' => $e -> getMessage ( )
             ) ) ;
             
-            $response -> setStatusCode ( $e->getCode( ) ) ;
+            $response -> setStatusCode ( $e->getCode ( ) ) ;
 
         }
 
