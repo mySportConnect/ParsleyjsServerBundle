@@ -42,7 +42,7 @@ class Generator
         }
         if ( $errorsList != '' )
         {
-            throw new \Exception ( $errorsList , 403 ) ;
+            throw new \Exception ( $errorsList , 400 ) ;
         }
 
     }
